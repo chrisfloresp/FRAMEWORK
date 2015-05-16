@@ -1,0 +1,82 @@
+  [1m[36m (12.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (26.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateBlogs (20150516003903)
+  [1m[35m (8.7ms)[0m  CREATE TABLE `blogs` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `about` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150516003903')
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (14.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (67.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateBlogs (20150516003903)
+  [1m[35m (30.5ms)[0m  CREATE TABLE `blogs` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `about` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150516003903')
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreatePosts (20150516010935)
+  [1m[35m (17.4ms)[0m  CREATE TABLE `posts` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `content` varchar(255), `blog_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (29.9ms)[0m  [1mCREATE  INDEX `index_posts_on_blog_id`  ON `posts` (`blog_id`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150516010935')[0m
+  [1m[35m (5.7ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 200.0.118.173 at 2015-05-16 01:34:07 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 38ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/new" for 200.0.118.173 at 2015-05-16 01:35:11 +0000
+Processing by BlogsController#new as HTML
+  Rendered blogs/_form.html.erb (31.7ms)
+  Rendered blogs/new.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 1032ms (Views: 1021.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/blogs.css?body=1" for 200.0.118.173 at 2015-05-16 01:35:12 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 200.0.118.173 at 2015-05-16 01:35:12 +0000
+
+
+Started GET "/assets/application.css?body=1" for 200.0.118.173 at 2015-05-16 01:35:12 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 200.0.118.173 at 2015-05-16 01:35:12 +0000
+
+
+Started GET "/assets/posts.css?body=1" for 200.0.118.173 at 2015-05-16 01:35:12 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 200.0.118.173 at 2015-05-16 01:35:12 +0000
+
+
+Started GET "/assets/blogs.js?body=1" for 200.0.118.173 at 2015-05-16 01:35:12 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 200.0.118.173 at 2015-05-16 01:35:13 +0000
+
+
+Started GET "/assets/posts.js?body=1" for 200.0.118.173 at 2015-05-16 01:35:13 +0000
+
+
+Started GET "/assets/application.js?body=1" for 200.0.118.173 at 2015-05-16 01:35:13 +0000
